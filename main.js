@@ -1,24 +1,24 @@
 let answer=document.getElementById("answer");
 inputs = document.querySelectorAll(".buttons input");
-let screenvalue= '';
 inputs.forEach(inp =>{
-    inp.addEventListener("click",(e) => {
+    inp.addEventListener("click", (e) => {
      text=e.target.value;
+     console.log(text);
      if(text == "AC"){
-         screenvalue='';
-         answer.value= screenvalue;
+         
+         answer.value= null;
 
      }
      else if(text=="="){
-         answer.value=eval(screenvalue);
+         answer.value=eval(answer.value);
          
      }
      else if(text=="DEL"){
          answer.value=answer.value.substr(0,answer.value.length - 1);
      }
      else{
-         screenvalue+=text;
-         answer.value=screenvalue;
+         
+         answer.value+=text;
      }
 
     });
